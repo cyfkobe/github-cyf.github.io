@@ -8,7 +8,11 @@ header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
     - Mysql
+    - Docker  
 ---
+
+> docker搭建mysql主从复制读写分离
+
 # docker搭建mysql主从复制读写分离
 ## 1、搭建mysql主从复制读写分离
 **主从库搭建过程**
