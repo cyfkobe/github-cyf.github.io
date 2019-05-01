@@ -18,7 +18,7 @@ docker run -d -p 3326:3306 -v /home/cyf/docker/mysql/slaver/config/:/etc/mysql -
 **搭建主从复制**
 
 主库配置文件
-```java
+```
 [mysqld]
 必要的配置：
 log-bin=master-mysql-bin //开启二进制
@@ -33,12 +33,12 @@ expire_logs_days = 10 //binlog日志保留的天数
 [mysql日志格式](https://blog.csdn.net/mycwq/article/details/17136997)
 
 从库配置文件
-```java
+```
 [mysqld]
 server_id=2
 ```
 主库操作
-```java
+```
 mysql> grant replication slave on *.* to root@'172.18.0.3' identified by '123456';
 Query OK, 0 rows affected, 1 warning (0.00 sec)
 
@@ -51,7 +51,7 @@ mysql> show master status;
 1 row in set (0.00 sec)
 ```
 从库操作
-```java
+```
 mysql> change master to master_user='root',master_password='123456',master_host='172.18.0.2',master_log_file='master-mysql-bin.000003',master_log_pos=446;
 Query OK, 0 rows affected, 2 warnings (0.08 sec)
 
@@ -75,11 +75,11 @@ mysql> show slave status\G
 **搭建读写分离**
 
 360atlas搭建
-```java
+```
 docker run -d -p 1234:1234 -p 2345:2345 -v /home/cyf/docker/mysql/atlas/conf/:/usr/local/mysql-proxy/conf -v /home/cyf/docker/mysql/atlas/logs:/usr/local/mysql-proxy/log --name 360atlas --net cyf --ip 172.18.0.4 registry.cn-beijing.aliyuncs.com/qianjia2018/qianjia_dev:atlas
 ```
 配置文件
-```java
+```
 [mysql-proxy]
 
 #管理接口的用户名
@@ -142,7 +142,7 @@ charset=utf8
 pwds=root:/iZxz+0GRoA=
 ```
 360atlas操作
-```java
+```
 mysql -h127.0.0.1 -P2345 -uroot -p123456 //登录360atlas管理端口
 mysql> select * from help;
 +----------------------------+---------------------------------------------------------+
