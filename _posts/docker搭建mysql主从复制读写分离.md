@@ -4,6 +4,7 @@ title:      docker搭建mysql主从复制读写分离
 subtitle:   docker搭建mysql主从复制读写分离
 date:       2019-05-1
 author:     cyf
+header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
     - Mysql
