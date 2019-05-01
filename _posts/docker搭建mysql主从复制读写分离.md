@@ -1,183 +1,78 @@
 ---
 layout:     post
-title:      docker搭建mysql主从复制读写分离
-subtitle:   docker搭建mysql主从复制读写分离
-date:       2019-05-1
-author:     cyf
+title:      JSON转模型 For YYModel
+subtitle:   使用 YYModel库 快速完成 JSON 转模型
+date:       2016-10-26
+author:     BY
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
-    - Mysql
-    - Docker  
+    - iOS
+    - 开发技巧
 ---
 
-> docker搭建mysql主从复制读写分离
+>JSON转模型是我们做iOS开发的基础技能，本文将通过[YYModel](https://github.com/ibireme/YYModel)这个框架安全快速的完成JSON到模型的转换，其中还会介绍到一款好用的插件[ESJsonFormat](https://github.com/EnjoySR/ESJsonFormat-Xcode)。
 
-# docker搭建mysql主从复制读写分离
-## 1、搭建mysql主从复制读写分离
-**主从库搭建过程**
+# 1、首先创建模型类
+创建模型类我们可以通过[ESJsonFormat](https://github.com/EnjoySR/ESJsonFormat-Xcode)这款插件快速完成。
+
+使用方法：
+
+将光标移动到代码行中 如下图的13行
+
+然后点击`Window`->`ESJsonFormat`->`Input JSON Window`调出窗口
+
+
+![](http://ww1.sinaimg.cn/large/006y8lVagw1f95tr49ed7j30no0csdir.jpg)
+
+在窗口中输入你要解析的JSON文本，如下图：
+
+![](http://ww4.sinaimg.cn/large/006y8lVagw1f97s13l4b9j30jv0e8dhp.jpg)
+
+按`Enter`继续，然后神奇的一幕发生了
+
+![](http://ww3.sinaimg.cn/large/006y8lVagw1f97s46k95tj30k30dydj9.jpg)
+
+![](http://ww1.sinaimg.cn/large/006y8lVagw1f97s6yp9hmj30iw0b840m.jpg)
+
+看到在.h中 所有的属性自动为你填上，而且帮你选好了类型
+
+.m 也为你声明了`list`中成员的类型，不过这里需要稍作修改，因为我们需要用到YYModel进行解析，所以方法名改成`modelContainerPropertyGenericClass`
+
 ```
-docker run -d -p 3316:3306 -v /home/cyf/docker/mysql/master/config/:/etc/mysql -v /home/cyf/docker/mysql/master/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --net cyf --ip 172.18.0.2 --name master 1347445564/mysql5.7.18last
-docker run -d -p 3326:3306 -v /home/cyf/docker/mysql/slaver/config/:/etc/mysql -v /home/cyf/docker/mysql/slaver/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --net cyf --ip 172.18.0.3 --name slaver 1347445564/mysql5.7.18last
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"list" : [List class]};
+}
+
 ```
-**搭建主从复制**
 
-主库配置文件
+还有问题就是属性中出现关键字`id`，我们需要将id改为`teacherId`
+
+然后在.m的`implementation`中声明,将字典的的`id`
+
 ```
-[mysqld]
-必要的配置：
-log-bin=master-mysql-bin //开启二进制
-binlog-format=MIXED //mysql日志格式（Row、Statement、Mixed)
-server_id=1 //与从库不能相同，唯一
-
-可选的配置：
-binlog-ignore-db = mysql //不同步的数据库（mysql通常不同步）
-binlog-do-db = db_name //同步的数据库
-expire_logs_days = 10 //binlog日志保留的天数
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"teacherId" : @"id"};
+}
 ```
-[mysql日志格式](https://blog.csdn.net/mycwq/article/details/17136997)
 
-从库配置文件
+这样，模型的创建就完成了，剩下的就是用YYModel进行解析了
+
+# 2、使用YYModel进行解析
+
+解析很简单，就只需要一句话
+
 ```
-[mysqld]
-server_id=2
+// 将 JSON (NSData,NSString,NSDictionary) 转换为 Model:
+Model *model = [Model yy_modelWithJSON:json];
+
+// 或者
+Model *model = [[Model alloc] init];
+[model yy_modelSetWithDictionary:json];
+
 ```
-主库操作
-```
-mysql> grant replication slave on *.* to root@'172.18.0.3' identified by '123456';
-Query OK, 0 rows affected, 1 warning (0.00 sec)
 
-mysql> show master status;
-+-------------------------+----------+--------------+------------------+-------------------+
-| File                    | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
-+-------------------------+----------+--------------+------------------+-------------------+
-| master-mysql-bin.000003 |      446 |              |                  |                   |
-+-------------------------+----------+--------------+------------------+-------------------+
-1 row in set (0.00 sec)
-```
-从库操作
-```
-mysql> change master to master_user='root',master_password='123456',master_host='172.18.0.2',master_log_file='master-mysql-bin.000003',master_log_pos=446;
-Query OK, 0 rows affected, 2 warnings (0.08 sec)
+到此，简便快速的完成了JSON到模型的转换。
 
-mysql> start slave;
-Query OK, 0 rows affected (0.00 sec)
-mysql> show slave status\G
-*************************** 1. row ***************************
-               Slave_IO_State: Waiting for master to send event
-                  Master_Host: 172.18.0.2
-                  Master_User: root
-                  Master_Port: 3306
-                Connect_Retry: 60
-              Master_Log_File: master-mysql-bin.000003
-          Read_Master_Log_Pos: 446
-               Relay_Log_File: f78474f07f6e-relay-bin.000002
-                Relay_Log_Pos: 327
-        Relay_Master_Log_File: master-mysql-bin.000003
-             Slave_IO_Running: Yes
-            Slave_SQL_Running: Yes
-```
-**搭建读写分离**
 
-360atlas搭建
-```
-docker run -d -p 1234:1234 -p 2345:2345 -v /home/cyf/docker/mysql/atlas/conf/:/usr/local/mysql-proxy/conf -v /home/cyf/docker/mysql/atlas/logs:/usr/local/mysql-proxy/log --name 360atlas --net cyf --ip 172.18.0.4 registry.cn-beijing.aliyuncs.com/qianjia2018/qianjia_dev:atlas
-```
-配置文件
-```
-[mysql-proxy]
-
-#管理接口的用户名
-admin-username=root
-
-#管理接口的密码
-admin-password=123456
-
-#实现管理接口的Lua脚本所在路径
-admin-lua-script=/usr/local/mysql-proxy/lib/mysql-proxy/lua/admin.lua
-
-#Atlas后端连接的MySQL主库的IP和端口，可设置多项，用逗号分隔
-proxy-backend-addresses=172.18.0.1:3316
-
-#Atlas后端连接的MySQL从库的IP和端口，@后面的数字代表权重，用来作负载均衡，若省略则默认为1，可设置多项，用逗号分隔
-proxy-read-only-backend-addresses=172.18.0.1:3326
-
-#设置Atlas的运行方式，设为true时为守护进程方式，设为false时为前台方式，一般开发调试时设为false，线上运行时设为true
-daemon=false
-
-#设置Atlas的运行方式，设为true时Atlas会启动两个进程，一个为monitor，一个为worker，monitor在worker意外退出后会自动将其重启，设为false时只有worker，没有monitor，一般开发调试时设为false，线上运行时设为true
-keepalive=true
-
-#工作线程数，推荐设置与系统的CPU核数相等
-event-threads=4
-
-#日志级别，分为message、warning、critical、error、debug五个级别
-log-level=message
-
-#日志存放的路径
-log-path=/usr/local/mysql-proxy/log
-
-#实例名称，用于同一台机器上多个Atlas实例间的区分
-instance=test
-
-#Atlas监听的工作接口IP和端口
-proxy-address=0.0.0.0:1234
-
-#Atlas监听的管理接口IP和端口
-admin-address=0.0.0.0:2345
-
-#连接池的最小空闲连接数，应设为event-threads的整数倍，可根据业务请求量大小适当调大或调小
-min-idle-connections=8
-
-#分表设置，此例中person为库名，mt为表名，id为分表字段，3为子表数量，可设置多项，以逗号分隔，若不分表则不需要设置该项
-#tables = person.mt.id.3
-
-#用户名与其对应的加密过的MySQL密码，密码使用PREFIX/bin目录下的加密程序encrypt加密，此设置项用于多个用户名同时访问同一个Atlas实例的情况，若只有一个用户名则不需要设置该项
-#pwds = user1:+jKsgB3YAG8=, user2:GS+tr4TPgqc=
-
-#默认字符集，若不设置该项，则默认字符集为latin1
-charset=utf8
-
-#允许连接Atlas的客户端的IP，可以是精确IP，也可以是IP段，以逗号分隔，若不设置该项则允许所有IP连接，否则只允许列表中的IP连接
-#client-ips = 127.0.0.1, 192.168.1
-
-#Atlas前面挂接的LVS的物理网卡的IP(注意不是虚IP)，若有LVS且设置了client-ips则此项必须设置，否则可以不设置
-#lvs-ips = 192.168.1.1
-
-pwds=root:/iZxz+0GRoA=
-```
-360atlas操作
-```
-mysql -h127.0.0.1 -P2345 -uroot -p123456 //登录360atlas管理端口
-mysql> select * from help;
-+----------------------------+---------------------------------------------------------+
-| command                    | description                                             |
-+----------------------------+---------------------------------------------------------+
-| SELECT * FROM help         | shows this help                                         |
-| SELECT * FROM backends     | lists the backends and their state                      |
-| SET OFFLINE $backend_id    | offline backend server, $backend_id is backend_ndx's id |
-| SET ONLINE $backend_id     | online backend server, ...                              |
-| ADD MASTER $backend        | example: "add master 127.0.0.1:3306", ...               |
-| ADD SLAVE $backend         | example: "add slave 127.0.0.1:3306", ...                |
-| REMOVE BACKEND $backend_id | example: "remove backend 1", ...                        |
-| SELECT * FROM clients      | lists the clients                                       |
-| ADD CLIENT $client         | example: "add client 192.168.1.2", ...                  |
-| REMOVE CLIENT $client      | example: "remove client 192.168.1.2", ...               |
-| SELECT * FROM pwds         | lists the pwds                                          |
-| ADD PWD $pwd               | example: "add pwd user:raw_password", ...               |
-| ADD ENPWD $pwd             | example: "add enpwd user:encrypted_password", ...       |
-| REMOVE PWD $pwd            | example: "remove pwd user", ...                         |
-| SAVE CONFIG                | save the backends to config file                        |
-| SELECT VERSION             | display the version of Atlas                            |
-+----------------------------+---------------------------------------------------------+
-16 rows in set (0.00 sec)
-
-mysql> select * from backends;
-+-------------+-----------------+-------+------+
-| backend_ndx | address         | state | type |
-+-------------+-----------------+-------+------+
-|           1 | 172.18.0.1:3316 | up    | rw   |
-|           2 | 172.18.0.1:3326 | up    | ro   | //up状态即可
-+-------------+-----------------+-------+------+
-2 rows in set (0.00 sec)
-```
+最后，[这里附上一篇YYModel的使用](http://www.jianshu.com/p/25e678fa43d3)
