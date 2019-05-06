@@ -54,7 +54,7 @@ commit;
 set gtid_next='AUTOMATIC';
 start slave; //只能跳过一个事务
 ```
-```java
+```j
 stop slave;
 reset master;
 set global gtid_purged='2a09ee6e-645d-11e7-a96c-000c2953a1cb:1-33';
