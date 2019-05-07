@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      搭建redis一主一从集群
-subtitle:   docker搭建redis集群
 date:       2019-05-06
 author:     cyf
 header-img: img/post-bg-ios9-web.jpg

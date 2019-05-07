@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      mysql开启gtid复制模式
-subtitle:   mysql开启gtid复制模式
 date:       2019-05-06
 author:     cyf
 header-img: img/post-bg-ios9-web.jpg
