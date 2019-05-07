@@ -10,7 +10,6 @@ tags:
     - Redis
     - Docker
 ---
-
 ## 一、利用docker-machine搭建测试环境
 ### docker-machine
 创建两个虚拟机
