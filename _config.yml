@@ -7,7 +7,7 @@ description: "爱篮球，爱妹子"
 keyword: "kobe"
 url: "https://github-cyf.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/github-cyf/github-cyf.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
