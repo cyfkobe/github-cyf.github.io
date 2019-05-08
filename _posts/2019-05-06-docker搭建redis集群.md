@@ -3,7 +3,7 @@ layout:     post
 title:      搭建redis一主一从集群
 date:       2019-05-06
 author:     cyf
-header-img: img/post-bg-ios9-web.jpg
+header-img: img/post-bg-swift.jpg
 catalog: true
 tags:
     - Redis
