@@ -25,11 +25,11 @@ WINEDIR="wine"
 export LANG="zh_CN.utf8" //修改成中文
 ```
 `./start_navicat`进入navicat页面，修改：`工具栏` --> `选项` 下的字体为`AR PL UMing CN`
-![常规](https://img-blog.csdn.net/20180529173345853?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMzc2NzQw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![常规](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/%E5%B8%B8%E8%A7%84.png?raw=true)
 
-![编辑器](https://img-blog.csdn.net/20180529173409313?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMzc2NzQw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![编辑器](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/%E7%BC%96%E8%BE%91%E5%99%A8.png?raw=true)
 
-![记录](https://img-blog.csdn.net/20180529173427350?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMzc2NzQw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![记录](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/%E8%AE%B0%E5%BD%95.png?raw=true)
 
 # 添加快捷方式
 在`/usr/share/applications`路径下添加`navicat.desktop`配置如下:
