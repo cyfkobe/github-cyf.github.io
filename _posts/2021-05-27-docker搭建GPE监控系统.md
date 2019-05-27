@@ -18,11 +18,12 @@ tags:
 |2.7.1|prom/prometheus|
 
 ## 2、prometheus启动命令
-```java
+```
 docker run -d -p 9090:9090 -v /qj/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml -v /qj/prometheus/rules/:/etc/prometheus/rules -v /qj/prometheus/data/:/prometheus -v /qj/prometheus/conf.d/:/etc/prometheus/conf.d --name prometheus --restart=always prom/prometheus --config.file=/etc/prometheus/prometheus.yml
 ```
 ## 3、prometheus配置文件
-```java
+
+```
 global: //全局设置，可以被覆盖
   scrape_interval: 15s //抓取目标实例的频率时间值，默认10s
   evaluation_interval: 15s //执行配置文件规则的频率时间值, 默认1m
@@ -51,7 +52,7 @@ scrape_configs: //抓取配置的列表
 ```
 ## 4、prometheus报警规则配置示例
 [一些exporter镜像和报警规则](https://awesome-prometheus-alerts.grep.to/rules.html)
-```java
+```
 groups:
 - name: 实例状态 
   rules:
@@ -152,7 +153,7 @@ sum(http_requests_total{method="GET"}) offset 5m  #不合法的
 在向量和标量之间，这个运算符会作用于这个向量的每个样本值上。例如：如果一个时间序列瞬时向量除以 2，操作结果也是一个新的瞬时向量，且度量指标名称不变,它是原度量指标瞬时向量的每个样本值除以 2。
 
 如果是瞬时向量与瞬时向量之间进行数学运算时，过程会相对复杂一点，运算符会依次找到与左边向量元素匹配（标签完全一致）的右边向量元素进行运算，如果没找到匹配元素，则直接丢弃。同时新的时间序列将不会包含指标名称。
-```java
+```
 node_disk_bytes_written + node_disk_bytes_read //获取主机磁盘IO的总量
 ```
 ##### 布尔运算符
@@ -202,7 +203,7 @@ Prometheus 还提供了下列内置的聚合操作符，这些操作符作用域
 |topk|样本值最大的k个元素|
 |quantile|分布统计|
 这些操作符被用于聚合所有标签维度，或者通过 without 或者 by 子语句来保留不同的维度
-```java
+```
 <aggr-op>([parameter,] <vector expression>) [without|by (<label list>)]
 ```
 其中只有 count_values, quantile, topk, bottomk 支持参数(parameter)。
@@ -212,11 +213,11 @@ without 用于从计算结果中移除列举的标签，而保留其它标签。
 例如：
 
 如果指标 http_requests_total 的时间序列的标签集为 application, instance, 和 group，我们可以通过以下方式计算所有 instance 中每个 application 和 group 的请求总量：
-```java
+```
 sum(http_requests_total) without (instance)
 ```
 等价于
-```java
+```
  sum(http_requests_total) by (application, group)
 ```
 如果只需要计算整个应用的 HTTP 请求总量，可以直接使用表达式：
@@ -271,7 +272,7 @@ quantile(0.5, http_requests_total)
 |absent()|如果传递给它的向量具有任何元素，则返回空向量;如果传递给它的向量没有元素，则返回值为1的1元素向量。|
 |sum()|求和函数|
 使用举例：
-```java
+```
 容器存活状态
 rate(container_last_seen{instance=~"$container",name=~"$container_name"}[1m]) //[1m]代表过去一分钟
 
@@ -290,7 +291,7 @@ absent(container_last_seen{instance=~"$container",name=~"allqj"})
 |:----:|:----:|
 |6.0.0|grafana/grafana|
 ## 2、grafana启动命令
-```java
+```
 docker run -d -p 3000:3000 --name grafana --restart=always -v /qj/grafana/data/:/var/lib/grafana -v /qj/grafana/logs:/var/log/grafana grafana/grafana
 ```
 ## 3、仪表盘规划
@@ -310,11 +311,11 @@ docker run -d -p 3000:3000 --name grafana --restart=always -v /qj/grafana/data/:
 |:----:|:----:|
 |0.16.1|prom/alertmanager|
 ## 2、alertmanager启动命令
-```java
+```
 docker run -d -p 9093:9093 -v /qj/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml --name alertmanager --restart=always prom/alertmanager --config.file=/etc/alertmanager/alertmanager.yml
 ```
 ## 3、alertmanager配置文件
-```java
+```
 global:
   resolve_timeout: 5m
 route: //路由块定义路由树中的节点及其子节点
@@ -338,7 +339,7 @@ inhibit_rules: //一个inhibition规则是在与另一组匹配器匹配的警�
     equal: ['alertname', 'dev', 'instance']
 ```
 ## 4、alertmanager功能
-```java
+```
 Alertmanager处理客户端应用程序（如Prometheus服务器）发送的警报。它负责对它们进行重复数据删除，分组和路由，以及正确的接收器集成。它还负责警报的静音和抑制。
 ```
 # 四、pushgateway
@@ -347,7 +348,7 @@ Alertmanager处理客户端应用程序（如Prometheus服务器）发送的警�
 |:----:|:----:|
 |0.7.0|prom/pushgateway|
 ## 2、pushgateway启动命令
-```java
+```
 docker run -d -p 9091:9091 --name pushgateway --restart=always prom/pushgateway
 ```
 # 五、dingtalk_hook
@@ -356,7 +357,7 @@ docker run -d -p 9091:9091 --name pushgateway --restart=always prom/pushgateway
 |:----:|:----:|
 |无|registry.cn-beijing.aliyuncs.com/qianjia2018/qianjia_public:dingtalk-hook|
 ## 2、dingtalk启动命令
-```java
+```
 docker run -d -p 8060:8060 --name dingtalk-hook --restart=always registry.cn-beijing.aliyuncs.com/qianjia2018/qianjia_public:dingtalk-hook --ding.profile="webhook=https://oapi.dingtalk.com/robot/send?access_token=1bd8b136d437ddd7b93f2507def0576e0f77921dad3e3acbd758457246a41dff"
 ```
 # 六、cadvisor
@@ -366,7 +367,7 @@ docker run -d -p 8060:8060 --name dingtalk-hook --restart=always registry.cn-bei
 |v0.32.0|google/cadvisor|
 
 ## 2、cadvisor启动命令
-```java
+```
 docker run -d -p 9000:8080 -v /:/rootfs:ro -v /var/run:/var/run:rw -v /sys:/sys:ro -v /var/lib/docker/:/var/lib/docker:ro -v /dev/disk/:/dev/disk:ro --name cadvisor --restart=always google/cadvisor
 ```
 # 七、exporter
@@ -388,7 +389,7 @@ API服务|AWS ECS Exporter， Docker Cloud Exporter, Docker Hub Exporter, GitHub
 |:----:|:----:|
 |0.17.0|prom/node-exporter|
 ### 2.2 启动命令
-```java
+```
 docker run -d -p 9100:9100 -v /proc:/host/proc:ro -v /sys:/host/sys:ro -v /:/rootfs:ro --net=host --name node-exporter --restart=always prom/node-exporter
 ```
 ## 3、mysql_exporter
@@ -398,7 +399,7 @@ docker run -d -p 9100:9100 -v /proc:/host/proc:ro -v /sys:/host/sys:ro -v /:/roo
 |:----:|:----:|
 |0.11.0|prom/mysqld-exporter|
 ### 3.2 启动命令
-```java
+```
 docker run -d -p 9104:9104 --name mysql_master --restart=always -e DATA_SOURCE_NAME="dbadmin:om123456@@(172.17.3.96:3316)/" prom/mysqld-exporter
 
 docker run -d -p 9105:9104 --name mysql_slave1 --restart=always -e DATA_SOURCE_NAME="dbadmin:om123456@@(172.17.3.99:3316)/" prom/mysqld-exporter
@@ -412,7 +413,7 @@ docker run -d -p 9106:9104 --name mysql_slave2 --restart=always -e DATA_SOURCE_N
 |:----:|:----:|
 |无|kbudde/rabbitmq-exporter|
 ### 4.2 启动命令
-```java
+```
 docker run -d -p 9095:9090 -e RABBIT_URL="http://rabbitmq.allhome.com.cn" -e RABBIT_USER=admin -e RABBIT_PASSWORD=AllqjInter123@ --name rabbitmq-exporter --restart=always kbudde/rabbitmq-exporter
 ```
 ## 5、redis_exporter
@@ -422,17 +423,17 @@ github地址](https://github.com/oliver006/redis_exporter)
 |:----:|:----:|
 |无|oliver006/redis_exporter
 ### 5.2 启动命令
-```java
+```
 docker run -d -p 9121:9121 -e REDIS_ADDR=172.17.3.96:6380 -e REDIS_PASSWORD=qj12345678@ --name redis-exporter --restart=always oliver006/redis_exporter
 ```
 ## 6、nginx_exporter
 ## 7、process-exporter
 ### 7.1 启动命令
-```java
+```
 docker run -d -p 9256:9256 --privileged -v /proc:/host/proc:ro -v /qj/process/config/:/config --name process-exporter ncabatoff/process-exporter --procfs /host/proc -config.path /config/process.yml
 ```
 ### 7.2 process.yml
-```java
+```
 process_names:
   - cmdline:
       - '.+'
