@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bd22109-9266-49ad-b75a-468d178c0a26" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/_posts/2019-05-27-docker常用命令使用.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2019-05-27-docker常用命令使用.md" afterDir="false" />
-    </list>
+    <list default="true" id="9bd22109-9266-49ad-b75a-468d178c0a26" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +12,7 @@
     <session id="1975705062">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -149,8 +147,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2019-05-27-docker常用命令使用.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="87">
-                <caret line="93" column="6" lean-forward="true" selection-start-line="93" selection-end-line="117" selection-end-column="82" />
+              <first_editor relative-caret-position="410">
+                <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
               </first_editor>
               <second_editor />
             </state>
@@ -221,10 +219,10 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="20" />
-    <option name="y" value="53" />
-    <option name="width" value="1900" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1884" />
+    <option name="y" value="89" />
+    <option name="width" value="1890" />
     <option name="height" value="789" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -253,11 +251,6 @@
               <item name="github-cyf.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="github-cyf.github.io" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="github-cyf.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="github-cyf.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -269,7 +262,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558953024673" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558956343456" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -307,16 +300,15 @@
       <updated>1558920398162</updated>
       <workItem from="1558920399404" duration="7440000" />
       <workItem from="1558935488979" duration="2756000" />
-      <workItem from="1558950398410" duration="2625000" />
+      <workItem from="1558950398410" duration="4073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12821000" />
+    <option name="totallyTimeSpent" value="14269000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -532,8 +524,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2019-05-27-docker常用命令使用.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="87">
-            <caret line="93" column="6" lean-forward="true" selection-start-line="93" selection-end-line="117" selection-end-column="82" />
+          <first_editor relative-caret-position="410">
+            <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
           </first_editor>
           <second_editor />
         </state>
