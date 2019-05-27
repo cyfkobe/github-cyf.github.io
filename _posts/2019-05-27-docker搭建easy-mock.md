@@ -6,7 +6,7 @@ author:     cyf
 header-img: img/beautiful.jpg
 catalog: true
 tags:
-    - Nginx
+    - Docker
 ---
 # 首先启动mongo和redis
 ## 启动mongo
