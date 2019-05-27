@@ -3,7 +3,7 @@ layout:     post
 title:      docker搭建jenkins
 date:       2019-05-01
 author:     cyf
-header-img: img/cyf.png
+header-img: img/beautiful.jpg
 catalog: true
 tags:
     - Docker

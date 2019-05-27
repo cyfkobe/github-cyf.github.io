@@ -3,7 +3,7 @@ layout:     post
 title:      docker搭建GPE监控系统
 date:       2019-05-27
 author:     cyf
-header-img: img/cyf.png
+header-img: img/beautiful.jpg
 catalog: true
 tags:
     - GPE
