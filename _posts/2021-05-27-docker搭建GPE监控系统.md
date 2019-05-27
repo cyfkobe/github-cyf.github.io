@@ -3,7 +3,7 @@ layout:     post
 title:      docker搭建GPE监控系统
 date:       2019-05-27
 author:     cyf
-header-img: img/post-bg-swift.jpg
+header-img: img/cyf.png
 catalog: true
 tags:
     - GPE
@@ -12,9 +12,9 @@ tags:
 [TOC]
 # 一、prometheus
 ## 1、prometheus版本和镜像
-|版本|镜像|
+版本|镜像
 |:----:|:----:|
-|2.7.1|prom/prometheus|
+2.7.1|prom/prometheus
 ## 2、prometheus启动命令
 ```java
 docker run -d -p 9090:9090 -v /qj/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml -v /qj/prometheus/rules/:/etc/prometheus/rules -v /qj/prometheus/data/:/prometheus -v /qj/prometheus/conf.d/:/etc/prometheus/conf.d --name prometheus --restart=always prom/prometheus --config.file=/etc/prometheus/prometheus.yml
@@ -135,7 +135,7 @@ sum(http_requests_total{method="GET"}) offset 5m  #不合法的
 #### 7.5.1 二元运算符
 ##### 算数二元运算符
 
-|算数运算符|含义|
+算数运算符|含义
 |:----:|:----:|
 |+|加法|
 |-|减法|

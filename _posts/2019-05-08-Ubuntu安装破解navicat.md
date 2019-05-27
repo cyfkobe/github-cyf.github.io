@@ -3,7 +3,7 @@ layout:     post
 title:      Ubuntu安装破解navicat
 date:       2019-05-08
 author:     cyf
-header-img: img/post-bg-swift.jpg
+header-img: img/cyf.png
 catalog: true
 tags:
     - Mysql

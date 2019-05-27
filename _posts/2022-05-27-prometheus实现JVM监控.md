@@ -3,7 +3,7 @@ layout:     post
 title:      prometheus实现JVM监控
 date:       2019-05-27
 author:     cyf
-header-img: img/post-bg-swift.jpg
+header-img: img/cyf.png
 catalog: true
 tags:
     - GPE
