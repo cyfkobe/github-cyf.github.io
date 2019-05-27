@@ -10,7 +10,7 @@ tags:
     - JVM
 ---
 # java程序pom.xml添加如下依赖包
-```java
+```
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -22,14 +22,14 @@ tags:
         </dependency>
 ```
 **注意**：如果出现datasource循环依赖添如下配置
-```java
+```
 spring:
   cloud:
     refresh:
       refreshable: none
 ```
 # java程序application-dev.yml和application-prod.yml添加如下配置
-```java
+```
 management:
   endpoint:
     health:
@@ -50,7 +50,7 @@ management:
       application: ${spring.application.name}
 ```
 **注意**：公共包要用1.0.8的版本，本地启动需要删除本地.m2目录下的该依赖包，重新加载该依赖包
-```java
+```
         <dependency>
             <groupId>com.allqj.qjf</groupId>
             <artifactId>common</artifactId>
@@ -58,7 +58,7 @@ management:
         </dependency>
 ```
 # 最终效果：访问 http://localhost:端口号/actuator/prometheus
-```java
+```
 # HELP tomcat_servlet_request_max_seconds  
 # TYPE tomcat_servlet_request_max_seconds gauge
 tomcat_servlet_request_max_seconds{application="checkin",name="default",} 0.0
@@ -87,7 +87,7 @@ jvm_gc_pause_seconds_count{action="end of minor GC",application="checkin",cause=
 ```
 # prometheus配置prometheus.yml
 ## 第一种方式：手动添加
-```java
+```
   - job_name: checkin #以application name区分
     scrape_interval: 5s
     metrics_path: '/actuator/prometheus'
@@ -97,7 +97,7 @@ jvm_gc_pause_seconds_count{action="end of minor GC",application="checkin",cause=
           instance: checkin #以application name区分
 ```
 ## 第二种方式：eureka服务自动发现
-```java
+```
   - job_name: eureka
     scheme: http
     metrics_path: '/actuator/prometheus'
@@ -108,7 +108,7 @@ jvm_gc_pause_seconds_count{action="end of minor GC",application="checkin",cause=
         services: [CHECKIN] #eureka上注册的服务名，没有则代表所有服务
 ```
 **注意第二种方式的实现需要eureka添加如下依赖包**
-```java
+```
         <dependency>
             <groupId>at.twinformatics</groupId>
             <artifactId>eureka-consul-adapter</artifactId>
