@@ -12,9 +12,11 @@ tags:
 [TOC]
 # 一、prometheus
 ## 1、prometheus版本和镜像
-版本|镜像
+
+|版本|镜像|
 |:----:|:----:|
-2.7.1|prom/prometheus
+|2.7.1|prom/prometheus|
+
 ## 2、prometheus启动命令
 ```java
 docker run -d -p 9090:9090 -v /qj/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml -v /qj/prometheus/rules/:/etc/prometheus/rules -v /qj/prometheus/data/:/prometheus -v /qj/prometheus/conf.d/:/etc/prometheus/conf.d --name prometheus --restart=always prom/prometheus --config.file=/etc/prometheus/prometheus.yml
