@@ -159,6 +159,7 @@ node_disk_bytes_written + node_disk_bytes_read //获取主机磁盘IO的总量
 ##### 布尔运算符
 
 更多的用于设置报警规则
+
 |布尔运算符|含义|
 |:----:|:----:|
 |==|相等|
@@ -171,6 +172,7 @@ node_disk_bytes_written + node_disk_bytes_read //获取主机磁盘IO的总量
 ##### 集合运算符
 
 使用瞬时向量表达式能够获取到一个包含多个时间序列的集合，我们称为瞬时向量。 通过集合运算，可以在两个瞬时向量与瞬时向量之间进行相应的集合操作。 
+
 |集合运算符|含义|
 |:----:|:----:|
 |and|并且|
@@ -189,6 +191,7 @@ vector1 <operator> vector2
 #### 7.5.3 聚合操作
 
 Prometheus 还提供了下列内置的聚合操作符，这些操作符作用域瞬时向量。可以将瞬时表达式返回的样本数据进行聚合，形成一个具有较少样本值的新的时间序列。
+
 |聚合操作符|含义|
 |:----:|:----:|
 |sum|求和|
@@ -202,6 +205,7 @@ Prometheus 还提供了下列内置的聚合操作符，这些操作符作用域
 |bottomk|样本值最小的 k 个元素|
 |topk|样本值最大的k个元素|
 |quantile|分布统计|
+
 这些操作符被用于聚合所有标签维度，或者通过 without 或者 by 子语句来保留不同的维度
 ```
 <aggr-op>([parameter,] <vector expression>) [without|by (<label list>)]
@@ -264,6 +268,7 @@ quantile(0.5, http_requests_total)
 
 具有相同优先级的运算符是满足结合律的（左结合）。例如，2 * 3 % 2 等价于 (2 * 3) % 2。运算符 ^ 例外，^ 满足的是右结合，例如，2 ^ 3 ^ 2 等价于 2 ^ (3 ^ 2)。
 ### 7.6 内置函数
+
 |函数|作用|
 |:----:|:----:|
 |rate()|计算范围向量中时间序列的每秒平均增长率|
@@ -271,6 +276,7 @@ quantile(0.5, http_requests_total)
 |topk()|按样本值计算的最大k个元素|
 |absent()|如果传递给它的向量具有任何元素，则返回空向量;如果传递给它的向量没有元素，则返回值为1的1元素向量。|
 |sum()|求和函数|
+
 使用举例：
 ```
 容器存活状态
@@ -287,9 +293,11 @@ absent(container_last_seen{instance=~"$container",name=~"allqj"})
 ```
 # 二、grafana
 ## 1、grafana版本和镜像
+
 |版本|镜像|
 |:----:|:----:|
 |6.0.0|grafana/grafana|
+
 ## 2、grafana启动命令
 ```
 docker run -d -p 3000:3000 --name grafana --restart=always -v /qj/grafana/data/:/var/lib/grafana -v /qj/grafana/logs:/var/log/grafana grafana/grafana
@@ -307,9 +315,11 @@ docker run -d -p 3000:3000 --name grafana --restart=always -v /qj/grafana/data/:
 [Table面板](http://docs.grafana.org/reference/table_panel/)
 # 三、alertmanager
 ## 1、alertmanager版本和镜像
+
 |版本|镜像|
 |:----:|:----:|
 |0.16.1|prom/alertmanager|
+
 ## 2、alertmanager启动命令
 ```
 docker run -d -p 9093:9093 -v /qj/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml --name alertmanager --restart=always prom/alertmanager --config.file=/etc/alertmanager/alertmanager.yml
@@ -344,24 +354,29 @@ Alertmanager处理客户端应用程序（如Prometheus服务器）发送的警�
 ```
 # 四、pushgateway
 ## 1、pushgateway版本和镜像
+
 |版本|镜像|
 |:----:|:----:|
 |0.7.0|prom/pushgateway|
+
 ## 2、pushgateway启动命令
 ```
 docker run -d -p 9091:9091 --name pushgateway --restart=always prom/pushgateway
 ```
 # 五、dingtalk_hook
 ## 1、dingtalk版本和镜像
+
 |版本|镜像|
 |:----:|:----:|
 |无|registry.cn-beijing.aliyuncs.com/qianjia2018/qianjia_public:dingtalk-hook|
+
 ## 2、dingtalk启动命令
 ```
 docker run -d -p 8060:8060 --name dingtalk-hook --restart=always registry.cn-beijing.aliyuncs.com/qianjia2018/qianjia_public:dingtalk-hook --ding.profile="webhook=https://oapi.dingtalk.com/robot/send?access_token=1bd8b136d437ddd7b93f2507def0576e0f77921dad3e3acbd758457246a41dff"
 ```
 # 六、cadvisor
 ## 1、cadvisor版本和镜像
+
 |版本|镜像|
 |:----:|:----:|
 |v0.32.0|google/cadvisor|
@@ -372,6 +387,7 @@ docker run -d -p 9000:8080 -v /:/rootfs:ro -v /var/run:/var/run:rw -v /sys:/sys:
 ```
 # 七、exporter
 ## 1、常用的exporter
+
 范围|常用的Exporter
 ----|----
 数据库|**MySQL Exporter**, **Redis Exporter**, MongoDB Exporter, MSSQL Exporter等
@@ -383,11 +399,14 @@ API服务|AWS ECS Exporter， Docker Cloud Exporter, Docker Hub Exporter, GitHub
 日志|Fluentd Exporter, Grok Exporter等
 监控系统|Collectd Exporter, Graphite Exporter, InfluxDB Exporter, Nagios Exporter, SNMP Exporter等
 其它|Blockbox Exporter, JIRA Exporter, Jenkins Exporter， Confluence Exporter等
+
 ## 2、node_exporter
 ### 2.1 版本和镜像 
+
 |版本|镜像|
 |:----:|:----:|
 |0.17.0|prom/node-exporter|
+
 ### 2.2 启动命令
 ```
 docker run -d -p 9100:9100 -v /proc:/host/proc:ro -v /sys:/host/sys:ro -v /:/rootfs:ro --net=host --name node-exporter --restart=always prom/node-exporter
@@ -395,9 +414,11 @@ docker run -d -p 9100:9100 -v /proc:/host/proc:ro -v /sys:/host/sys:ro -v /:/roo
 ## 3、mysql_exporter
 [github地址](https://github.com/prometheus/mysqld_exporter)
 ### 3.1 版本和镜像
+
 |版本|镜像|
 |:----:|:----:|
 |0.11.0|prom/mysqld-exporter|
+
 ### 3.2 启动命令
 ```
 docker run -d -p 9104:9104 --name mysql_master --restart=always -e DATA_SOURCE_NAME="dbadmin:om123456@@(172.17.3.96:3316)/" prom/mysqld-exporter
@@ -409,9 +430,11 @@ docker run -d -p 9106:9104 --name mysql_slave2 --restart=always -e DATA_SOURCE_N
 ## 4、rabbitmq_exporter
 [github地址](https://github.com/kbudde/rabbitmq_exporter)
 ### 4.1 版本和镜像
+
 |版本|镜像|
 |:----:|:----:|
 |无|kbudde/rabbitmq-exporter|
+
 ### 4.2 启动命令
 ```
 docker run -d -p 9095:9090 -e RABBIT_URL="http://rabbitmq.allhome.com.cn" -e RABBIT_USER=admin -e RABBIT_PASSWORD=AllqjInter123@ --name rabbitmq-exporter --restart=always kbudde/rabbitmq-exporter
@@ -419,9 +442,11 @@ docker run -d -p 9095:9090 -e RABBIT_URL="http://rabbitmq.allhome.com.cn" -e RAB
 ## 5、redis_exporter
 github地址](https://github.com/oliver006/redis_exporter)
 ### 5.1 版本和镜像
+
 |版本|镜像|
 |:----:|:----:|
 |无|oliver006/redis_exporter
+
 ### 5.2 启动命令
 ```
 docker run -d -p 9121:9121 -e REDIS_ADDR=172.17.3.96:6380 -e REDIS_PASSWORD=qj12345678@ --name redis-exporter --restart=always oliver006/redis_exporter
