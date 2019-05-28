@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bd22109-9266-49ad-b75a-468d178c0a26" name="Default Changelist" comment="" />
+    <list default="true" id="9bd22109-9266-49ad-b75a-468d178c0a26" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +14,7 @@
     <session id="1975705062">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.13" value="1" />
@@ -46,14 +48,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="23" />
-          <entry key="md" value="1403" />
+          <entry key="md" value="1412" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="AIDL" value="2" />
           <entry key="HTML" value="23" />
-          <entry key="Markdown" value="1401" />
+          <entry key="Markdown" value="1410" />
         </counts>
       </usages-collector>
     </session>
@@ -148,7 +150,7 @@
         <entry file="file://$PROJECT_DIR$/_posts/2019-05-27-docker搭建easy-mock.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="34">
+              <first_editor relative-caret-position="-1496">
                 <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="29" />
               </first_editor>
               <second_editor />
@@ -222,8 +224,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1884" />
-    <option name="y" value="89" />
+    <option name="x" value="-25" />
+    <option name="y" value="38" />
     <option name="width" value="1890" />
     <option name="height" value="789" />
   </component>
@@ -308,17 +310,17 @@
       <workItem from="1558920399404" duration="7440000" />
       <workItem from="1558935488979" duration="2756000" />
       <workItem from="1558950398410" duration="4073000" />
-      <workItem from="1558962193954" duration="602000" />
+      <workItem from="1558962193954" duration="3045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14871000" />
+    <option name="totallyTimeSpent" value="17314000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-2" width="1920" height="1025" extended-state="6" />
+    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -332,7 +334,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32997763" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.31926408" />
       <window_info anchor="bottom" id="Docker" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" />
@@ -542,7 +544,7 @@
     <entry file="file://$PROJECT_DIR$/_posts/2019-05-27-docker搭建easy-mock.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="34">
+          <first_editor relative-caret-position="-1496">
             <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="29" />
           </first_editor>
           <second_editor />
