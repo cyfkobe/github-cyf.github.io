@@ -18,7 +18,8 @@
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -28,7 +29,7 @@
           <entry key="html" value="7" />
           <entry key="jpg" value="7" />
           <entry key="js" value="2" />
-          <entry key="md" value="54" />
+          <entry key="md" value="56" />
           <entry key="png" value="2" />
           <entry key="xml" value="1" />
           <entry key="yml" value="3" />
@@ -39,7 +40,7 @@
           <entry key="HTML" value="7" />
           <entry key="Image" value="9" />
           <entry key="JavaScript" value="2" />
-          <entry key="Markdown" value="54" />
+          <entry key="Markdown" value="56" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="1" />
           <entry key="YAML" value="3" />
@@ -49,14 +50,14 @@
         <counts>
           <entry key="gitignore" value="2" />
           <entry key="html" value="23" />
-          <entry key="md" value="1412" />
+          <entry key="md" value="1470" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="AIDL" value="2" />
           <entry key="HTML" value="23" />
-          <entry key="Markdown" value="1410" />
+          <entry key="Markdown" value="1468" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -64,30 +65,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2019-05-27-nginx解决跨域问题.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="34">
-                <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2019-05-27-kubectl常用命令使用.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="34">
-                <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2019-05-01-docker搭建jenkins.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -148,11 +125,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
+            <state relative-caret-position="472">
               <caret line="38" selection-start-line="38" selection-end-line="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2019-05-06-mysql开启gtid复制模式.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-470">
+                <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2019-05-08-Ubuntu安装破解navicat.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="85">
+                <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -169,12 +170,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2019-05-01-搭建mysql主从复制读写分离.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="85">
-                <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+              <first_editor relative-caret-position="71">
+                <caret line="193" column="7" selection-start-line="193" selection-start-column="7" selection-end-line="193" selection-end-column="7" />
               </first_editor>
               <second_editor />
             </state>
@@ -199,7 +200,6 @@
         <option value="$PROJECT_DIR$/_posts/2019-05-07-redis常用命令.md" />
         <option value="$PROJECT_DIR$/_posts/2019-05-06-mysql开启gtid复制模式.md" />
         <option value="$PROJECT_DIR$/_posts/2019-05-06-docker搭建redis集群.md" />
-        <option value="$PROJECT_DIR$/_posts/2019-05-01-搭建mysql主从复制读写分离.md" />
         <option value="$PROJECT_DIR$/_posts/2019-05-01-docker搭建jenkins.md" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/about.html" />
@@ -209,6 +209,7 @@
         <option value="$PROJECT_DIR$/_posts/2019-05-27-docker常用命令使用.md" />
         <option value="$PROJECT_DIR$/_posts/2019-05-27-docker搭建easy-mock.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/_posts/2019-05-01-搭建mysql主从复制读写分离.md" />
       </list>
     </option>
   </component>
@@ -248,6 +249,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -256,11 +258,15 @@
               <item name="github-cyf.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="github-cyf.github.io" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="github-cyf.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="github-cyf.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -308,11 +314,12 @@
       <workItem from="1558962193954" duration="3045000" />
       <workItem from="1559033899774" duration="1810000" />
       <workItem from="1559095355423" duration="749000" />
+      <workItem from="1559197927823" duration="416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19873000" />
+    <option name="totallyTimeSpent" value="20289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1025" extended-state="6" />
@@ -408,27 +415,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2019-05-08-Ubuntu安装破解navicat.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="85">
-            <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2019-05-07-redis常用命令.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="85">
-            <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2019-05-06-mysql开启gtid复制模式.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="85">
@@ -538,7 +525,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2019-05-01-搭建mysql主从复制读写分离.md">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2019-05-08-Ubuntu安装破解navicat.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="85">
@@ -548,10 +542,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+    <entry file="file://$PROJECT_DIR$/_posts/2019-05-06-mysql开启gtid复制模式.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-470">
+            <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2019-05-01-搭建mysql主从复制读写分离.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="71">
+            <caret line="193" column="7" selection-start-line="193" selection-start-column="7" selection-end-line="193" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
