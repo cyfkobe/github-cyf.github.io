@@ -8,14 +8,14 @@ catalog: true
 tags:
     - Mysql
 ---
-# 1、首先下载navicat
+# 一、首先下载navicat
 [官网下载地址](https://www.navicat.com.cn/download/navicat-for-mysql)
 选择linux最新版本：我用的是navicat121_mysql_cs_x64.tar.gz，解压到指定目录
 ```
 tar -zxvf /path/to/navicat121_mysql_cs_x64.tar.gz -C /opt
 mv /opt/navicat121_mysql_cs_x64 navicat
 ```
-# 2、解决乱码问题
+# 二、解决乱码问题
 编辑start_navicat
 ```
 vim /opt/navicat/start_navicat
@@ -31,7 +31,7 @@ export LANG="zh_CN.utf8" //修改成中文
 
 ![记录](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/%E8%AE%B0%E5%BD%95.png?raw=true)
 
-# 添加快捷方式
+# 三、添加快捷方式
 在`/usr/share/applications`路径下添加`navicat.desktop`配置如下:
 ```
 vim /usr/share/applications/navicat.desktop
@@ -47,7 +47,7 @@ Version=1.0
 Type=Application
 Terminal=0
 ```
-# 到期之后的解决方案
+# 四、到期之后的解决方案
 删除`~/.navicat`文件
 ```
 rm -rf ~/.navicat

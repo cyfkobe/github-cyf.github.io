@@ -11,17 +11,17 @@ tags:
 ---
 [TOC]
 # 一、prometheus
-## 1、prometheus版本和镜像
+## 1.1 prometheus版本和镜像
 
 |版本|镜像|
 |:----:|:----:|
 |2.7.1|prom/prometheus|
 
-## 2、prometheus启动命令
+## 1.2 prometheus启动命令
 ```
 docker run -d -p 9090:9090 -v /qj/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml -v /qj/prometheus/rules/:/etc/prometheus/rules -v /qj/prometheus/data/:/prometheus -v /qj/prometheus/conf.d/:/etc/prometheus/conf.d --name prometheus --restart=always prom/prometheus --config.file=/etc/prometheus/prometheus.yml
 ```
-## 3、prometheus配置文件
+## 1.3 prometheus配置文件
 
 ```
 global: //全局设置，可以被覆盖
@@ -50,7 +50,7 @@ scrape_configs: //抓取配置的列表
           
 //一系列job_name
 ```
-## 4、prometheus报警规则配置示例
+## 1.4 prometheus报警规则配置示例
 [一些exporter镜像和报警规则](https://awesome-prometheus-alerts.grep.to/rules.html)
 ```
 groups:
@@ -65,12 +65,13 @@ groups:
       summary: '实例{{ $labels.instance }} 挂掉' //摘要
       description: '{{ $labels.instance }} 已经挂掉超过一分钟了.' //现状描述
 ```
-### 4.1 告警信息生命周期的3中状态
+告警信息生命周期的3中状态
+
 > * inactive：表示当前报警信息即不是firing状态也不是pending状态
 > * pending：表示在设置的阈值时间范围内被激活的
 > * firing：表示超过设置的阈值时间被激活的
 
-## 5、prometheus功能
+## 1.5 prometheus功能
 > * 多维数据模型（时序由 metric 名字和 k/v 的 labels 构成）。
 > * 灵活的查询语句（PromQL）。
 > * 无依赖存储，支持local和remote不同模型。
@@ -78,22 +79,22 @@ groups:
 > * 监控目标，可以采用服务发现或静态配置的方式。
 > * 支持多种统计数据模型，图形化友好。
 
-## 6、时序类型
+## 1.6 时序类型
 Prometheus 时序数据分为 Counter, Gauge, Histogram, Summary 四种类型
 > * Counter 表示收集的数据是按照某个趋势（增加／减少）一直变化的，我们往往用它记录服务请求总量，错误总数等
 > * Gauge 表示搜集的数据是一个瞬时的，与时间没有关系，可以任意变高变低，往往可以用来记录内存使用率、磁盘使用率等。
 > * Histogram 由 <basename>_bucket{le="<upper inclusive bound>"}，<basename>_bucket{le="+Inf"}, <basename>_sum，<basename>_count 组成，主要用于表示一段时间范围内对数据进行采样，（通常是请求持续时间或响应大小），并能够对其指定区间以及总数进行统计，通常我们用它计算分位数的直方图
 > * Summary 和 Histogram 类似，由 <basename>{quantile="<φ>"}，<basename>_sum，<basename>_count 组成，主要用于表示一段时间内数据采样结果，（通常是请求持续时间或响应大小），它直接存储了 quantile 数据，而不是根据统计区间计算出来的。
 
-## 7、promql语法
+## 1.7 promql语法
 [查询语法](https://www.yangcs.net/prometheus/4-prometheus/basics.html)
-### 7.1 表达式语言数据类型
+### 1.7.1 表达式语言数据类型
 > * **瞬时向量**（Instant vector） - 一组时间序列，每个时间序列包含单个样本，它们共享相同的时间戳。也就是说，表达式的返回值中只会包含该时间序列中的最新的一个样本值。而相应的这样的表达式称之为瞬时向量表达式。
 > * **区间向量**（Range vector） - 一组时间序列，每个时间序列包含一段时间范围内的样本数据。
 > * **标量**（Scalar） - 一个浮点型的数据值。
 > * **字符串**（String） - 一个简单的字符串值。
 
-### 7.2 瞬时向量过滤器
+### 1.7.2 瞬时向量过滤器
 瞬时向量过滤器允许在指定的时间戳内选择一组时间序列和每个时间序列的单个样本值，在{}里附加一组标签来进一步过滤时间序列。PromQL还支持用户根据时间序列的标签匹配模式来对时间序列进行过滤，目前主要支持两种匹配模式：完全匹配和正则匹配。总共有以下几种标签匹配运算符：
 > * = : 选择与提供的字符串完全相同的标签。
 > * != : 选择与提供的字符串不相同的标签。
@@ -111,7 +112,7 @@ Prometheus 时序数据分为 Counter, Gauge, Histogram, Summary 四种类型
 {job=~".+"}              # 合法！
 {job=~".*",method="get"} # 合法！
 ```
-### 7.3 区间向量过滤器
+### 1.7.3 区间向量过滤器
 区间向量与瞬时向量的工作方式类似，唯一的差异在于在区间向量表达式中我们需要定义时间选择的范围，时间范围通过时间范围选择器[]进行定义，以指定应为每个返回的区间向量样本值中提取多长的时间范围。时间范围通过数字来表示，单位可以使用以下其中之一的时间单位：
 > * s - 秒
 > * m - 分钟
@@ -120,7 +121,7 @@ Prometheus 时序数据分为 Counter, Gauge, Histogram, Summary 四种类型
 > * w - 周
 > * y - 年
 
-### 7.4 时间位移操作
+### 1.7.4 时间位移操作
 如果我们想查询，5 分钟前的瞬时样本数据，或昨天一天的区间内的样本数据呢? 这个时候我们就可以使用位移操作，位移操作的关键字为 offset。
 
 以下表达式返回相对于当前查询时间过去 5 分钟的 http_requests_total 值：
@@ -134,9 +135,9 @@ sum(http_requests_total{method="GET"} offset 5m) #合法的
 ```
 sum(http_requests_total{method="GET"}) offset 5m  #不合法的
 ```
-### 7.5 操作符
-#### 7.5.1 二元运算符
-##### 算数二元运算符
+### 1.7.5 操作符
+
+**算数二元运算符**
 
 |算数运算符|含义|
 |:----:|:----:|
@@ -156,7 +157,7 @@ sum(http_requests_total{method="GET"}) offset 5m  #不合法的
 ```
 node_disk_bytes_written + node_disk_bytes_read //获取主机磁盘IO的总量
 ```
-##### 布尔运算符
+**布尔运算符**
 
 更多的用于设置报警规则
 
@@ -169,7 +170,7 @@ node_disk_bytes_written + node_disk_bytes_read //获取主机磁盘IO的总量
 |\>=|大于等于|
 |<=|小于等于|
 
-##### 集合运算符
+**集合运算符**
 
 使用瞬时向量表达式能够获取到一个包含多个时间序列的集合，我们称为瞬时向量。 通过集合运算，可以在两个瞬时向量与瞬时向量之间进行相应的集合操作。 
 
@@ -179,8 +180,8 @@ node_disk_bytes_written + node_disk_bytes_read //获取主机磁盘IO的总量
 |or|或者|
 |unless|排除|
 
-#### 7.5.2 匹配模式
-##### 一对一匹配
+### 1.7.6 匹配模式
+**一对一匹配**
 
 一对一匹配模式会从操作符两边表达式获取的瞬时向量依次比较并找到唯一匹配(标签完全一致)的样本值。默认情况下，使用表达式：
 ```
@@ -188,7 +189,7 @@ vector1 <operator> vector2
 ```
 在操作符两边表达式标签不一致的情况下，可以使用 on(label list) 或者 ignoring(label list）来修改便签的匹配行为。使用 ignoreing 可以在匹配时忽略某些便签。而 on 则用于将匹配行为限定在某些便签之内。
 
-#### 7.5.3 聚合操作
+### 1.7.7 聚合操作
 
 Prometheus 还提供了下列内置的聚合操作符，这些操作符作用域瞬时向量。可以将瞬时表达式返回的样本数据进行聚合，形成一个具有较少样本值的新的时间序列。
 
@@ -256,7 +257,7 @@ quantile(0.5, http_requests_total)
 ```
 {}   656
 ```
-#### 7.5.4 二元运算符优先级
+### 1.7.8 二元运算符优先级
 
 在 Prometheus 系统中，二元运算符优先级从高到低的顺序为：
 > * ^
@@ -267,7 +268,7 @@ quantile(0.5, http_requests_total)
 > * or
 
 具有相同优先级的运算符是满足结合律的（左结合）。例如，2 * 3 % 2 等价于 (2 * 3) % 2。运算符 ^ 例外，^ 满足的是右结合，例如，2 ^ 3 ^ 2 等价于 2 ^ (3 ^ 2)。
-### 7.6 内置函数
+### 1.7.9 内置函数
 
 |函数|作用|
 |:----:|:----:|
@@ -292,20 +293,20 @@ topk(10,sum(container_memory_rss{instance=~"$container",name=~"$container_name"}
 absent(container_last_seen{instance=~"$container",name=~"allqj"})
 ```
 # 二、grafana
-## 1、grafana版本和镜像
+## 2.1 grafana版本和镜像
 
 |版本|镜像|
 |:----:|:----:|
 |6.0.0|grafana/grafana|
 
-## 2、grafana启动命令
+## 2.2 grafana启动命令
 ```
 docker run -d -p 3000:3000 --name grafana --restart=always -v /qj/grafana/data/:/var/lib/grafana -v /qj/grafana/logs:/var/log/grafana grafana/grafana
 ```
-## 3、仪表盘规划
-### 3.1 加载数据源
+## 2.3 仪表盘规划
+### 2.3.1 加载数据源
 官方支持以下数据源：Graphite，InfluxDB，OpenTSDB，[Prometheus](http://docs.grafana.org/features/datasources/prometheus/)，Elasticsearch，CloudWatch。
-### 3.2 面板使用
+### 2.3.2 面板使用
 [Graph面板](http://docs.grafana.org/features/panels/graph/)
 
 [Singlestat面板](http://docs.grafana.org/features/panels/singlestat/)
@@ -314,17 +315,17 @@ docker run -d -p 3000:3000 --name grafana --restart=always -v /qj/grafana/data/:
 
 [Table面板](http://docs.grafana.org/reference/table_panel/)
 # 三、alertmanager
-## 1、alertmanager版本和镜像
+## 3.1 alertmanager版本和镜像
 
 |版本|镜像|
 |:----:|:----:|
 |0.16.1|prom/alertmanager|
 
-## 2、alertmanager启动命令
+## 3.2 alertmanager启动命令
 ```
 docker run -d -p 9093:9093 -v /qj/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml --name alertmanager --restart=always prom/alertmanager --config.file=/etc/alertmanager/alertmanager.yml
 ```
-## 3、alertmanager配置文件
+## 3.3 alertmanager配置文件
 ```
 global:
   resolve_timeout: 5m
@@ -348,45 +349,45 @@ inhibit_rules: //一个inhibition规则是在与另一组匹配器匹配的警�
       severity: 'warning'
     equal: ['alertname', 'dev', 'instance']
 ```
-## 4、alertmanager功能
+## 3.4 alertmanager功能
 ```
 Alertmanager处理客户端应用程序（如Prometheus服务器）发送的警报。它负责对它们进行重复数据删除，分组和路由，以及正确的接收器集成。它还负责警报的静音和抑制。
 ```
 # 四、pushgateway
-## 1、pushgateway版本和镜像
+## 4.1 pushgateway版本和镜像
 
 |版本|镜像|
 |:----:|:----:|
 |0.7.0|prom/pushgateway|
 
-## 2、pushgateway启动命令
+## 4.2 pushgateway启动命令
 ```
 docker run -d -p 9091:9091 --name pushgateway --restart=always prom/pushgateway
 ```
 # 五、dingtalk_hook
-## 1、dingtalk版本和镜像
+## 5.1 dingtalk版本和镜像
 
 |版本|镜像|
 |:----:|:----:|
 |无|registry.cn-beijing.aliyuncs.com/qianjia2018/qianjia_public:dingtalk-hook|
 
-## 2、dingtalk启动命令
+## 5.2 dingtalk启动命令
 ```
 docker run -d -p 8060:8060 --name dingtalk-hook --restart=always registry.cn-beijing.aliyuncs.com/qianjia2018/qianjia_public:dingtalk-hook --ding.profile="webhook=https://oapi.dingtalk.com/robot/send?access_token=1bd8b136d437ddd7b93f2507def0576e0f77921dad3e3acbd758457246a41dff"
 ```
 # 六、cadvisor
-## 1、cadvisor版本和镜像
+## 6.1 cadvisor版本和镜像
 
 |版本|镜像|
 |:----:|:----:|
 |v0.32.0|google/cadvisor|
 
-## 2、cadvisor启动命令
+## 6.2 cadvisor启动命令
 ```
 docker run -d -p 9000:8080 -v /:/rootfs:ro -v /var/run:/var/run:rw -v /sys:/sys:ro -v /var/lib/docker/:/var/lib/docker:ro -v /dev/disk/:/dev/disk:ro --name cadvisor --restart=always google/cadvisor
 ```
 # 七、exporter
-## 1、常用的exporter
+## 7.1 常用的exporter
 
 范围|常用的Exporter
 ----|----
@@ -400,26 +401,26 @@ API服务|AWS ECS Exporter， Docker Cloud Exporter, Docker Hub Exporter, GitHub
 监控系统|Collectd Exporter, Graphite Exporter, InfluxDB Exporter, Nagios Exporter, SNMP Exporter等
 其它|Blockbox Exporter, JIRA Exporter, Jenkins Exporter， Confluence Exporter等
 
-## 2、node_exporter
-### 2.1 版本和镜像 
+## 7.2 node_exporter
+### 7.2.1 版本和镜像 
 
 |版本|镜像|
 |:----:|:----:|
 |0.17.0|prom/node-exporter|
 
-### 2.2 启动命令
+### 7.2.2 启动命令
 ```
 docker run -d -p 9100:9100 -v /proc:/host/proc:ro -v /sys:/host/sys:ro -v /:/rootfs:ro --net=host --name node-exporter --restart=always prom/node-exporter
 ```
-## 3、mysql_exporter
+## 7.3 mysql_exporter
 [github地址](https://github.com/prometheus/mysqld_exporter)
-### 3.1 版本和镜像
+### 7.3.1 版本和镜像
 
 |版本|镜像|
 |:----:|:----:|
 |0.11.0|prom/mysqld-exporter|
 
-### 3.2 启动命令
+### 7.3.2 启动命令
 ```
 docker run -d -p 9104:9104 --name mysql_master --restart=always -e DATA_SOURCE_NAME="dbadmin:om123456@@(172.17.3.96:3316)/" prom/mysqld-exporter
 
@@ -427,37 +428,37 @@ docker run -d -p 9105:9104 --name mysql_slave1 --restart=always -e DATA_SOURCE_N
 
 docker run -d -p 9106:9104 --name mysql_slave2 --restart=always -e DATA_SOURCE_NAME="dbadmin:om123456@@(172.17.3.100:3316)/" prom/mysqld-exporter
 ```
-## 4、rabbitmq_exporter
+## 7.4 rabbitmq_exporter
 [github地址](https://github.com/kbudde/rabbitmq_exporter)
-### 4.1 版本和镜像
+### 7.4.1 版本和镜像
 
 |版本|镜像|
 |:----:|:----:|
 |无|kbudde/rabbitmq-exporter|
 
-### 4.2 启动命令
+### 7.4.2 启动命令
 ```
 docker run -d -p 9095:9090 -e RABBIT_URL="http://rabbitmq.allhome.com.cn" -e RABBIT_USER=admin -e RABBIT_PASSWORD=AllqjInter123@ --name rabbitmq-exporter --restart=always kbudde/rabbitmq-exporter
 ```
-## 5、redis_exporter
+## 7.5 redis_exporter
 github地址](https://github.com/oliver006/redis_exporter)
-### 5.1 版本和镜像
+### 7.5.1 版本和镜像
 
 |版本|镜像|
 |:----:|:----:|
 |无|oliver006/redis_exporter
 
-### 5.2 启动命令
+### 7.5.2 启动命令
 ```
 docker run -d -p 9121:9121 -e REDIS_ADDR=172.17.3.96:6380 -e REDIS_PASSWORD=qj12345678@ --name redis-exporter --restart=always oliver006/redis_exporter
 ```
-## 6、nginx_exporter
-## 7、process-exporter
-### 7.1 启动命令
+## 7.6 nginx_exporter
+## 7.7 process-exporter
+### 7.7.1 启动命令
 ```
 docker run -d -p 9256:9256 --privileged -v /proc:/host/proc:ro -v /qj/process/config/:/config --name process-exporter ncabatoff/process-exporter --procfs /host/proc -config.path /config/process.yml
 ```
-### 7.2 process.yml
+### 7.7.2 process.yml
 ```
 process_names:
   - cmdline:

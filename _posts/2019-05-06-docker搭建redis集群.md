@@ -9,8 +9,8 @@ tags:
     - Redis
     - Docker
 ---
-## 一、利用docker-machine搭建测试环境
-### docker-machine
+# 一、利用docker-machine搭建测试环境
+## 1.1 docker-machine
 创建两个虚拟机
 ```shell
 docker-machine create -d virtualbox master
@@ -26,8 +26,8 @@ docker-machine ssh slave
 master：192.168.99.101
 slave：192.168.99.102
 ```
-## 二、在虚拟主机配置一主一从一哨兵
-### 主redis
+# 二、在虚拟主机配置一主一从一哨兵
+## 2.1 主redis
 配置文件：redis_master.conf
 ```
 daemonize no
@@ -52,7 +52,7 @@ docker启动命令
 ```
 docker run --name redis_master -p 6379:6379 -v $(pwd)/redis_master.conf:/data/redis_master.conf --restart=always -d redis:latest redis-server redis_master.conf
 ```
-### 从redis
+## 2.2 从redis
 配置文件：redis_slave.conf
 ```
 daemonize no
@@ -79,7 +79,7 @@ docker启动命令
 ```
 docker run --name redis_slave -p 6379:6379 -v $(pwd)/redis_slave.conf:/data/redis_slave.conf --restart=always -d redis:latest redis-server 
 ```
-### 哨兵
+## 2.3 哨兵
 配置文件：sentinel.conf
 ```
 daemonize no
@@ -96,8 +96,8 @@ docker启动命令
 ```shell
 docker run --name sentinel -p 26379:26379 -v $(pwd)/sentinel.conf:/data/sentinel.conf --restart=always -d redis:latest redis-sentinel sentinel.conf
 ```
-## 三、测试主从同步、读写分离和哨兵监控
-### 主动同步、读写分离
+# 三、测试主从同步、读写分离和哨兵监控
+## 3.1 主动同步、读写分离
 进入主redis
 ```
 docker@master:~$ docker exec -it redis_master bash

@@ -8,8 +8,8 @@ catalog: true
 tags:
     - Docker
 ---
-# 首先启动mongo和redis
-## 启动mongo
+# 一、首先启动mongo和redis
+## 1.1 启动mongo
 
 ```
 docker run -d -p 27017:27017 -v /qj/mongo/data/:/data --name mongo --restart=always mongo
@@ -23,13 +23,13 @@ docker exec -it mongo bash
 mongo
 use mock
 ```
-## 启动redis
+## 1.2 启动redis
 
 ```
 docker run -p 6379:6379 --name=redis -v /home/cyf/docker/redis/data:/data --restart=always -d  1347445564/redis-6379 redis-server --appendonly yes
 ```
 
-# 启动easymock
+# 二、启动easymock
 在所要映射的目录下创建 default.json 和 local.json文件具体配置如下：
 ```
 #default.json（默认配置文件）

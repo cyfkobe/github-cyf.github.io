@@ -9,7 +9,7 @@ tags:
     - GPE
     - JVM
 ---
-# java程序pom.xml添加如下依赖包
+# 一、java程序pom.xml添加如下依赖包
 ```
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -28,7 +28,7 @@ spring:
     refresh:
       refreshable: none
 ```
-# java程序application-dev.yml和application-prod.yml添加如下配置
+# 二、java程序application-dev.yml和application-prod.yml添加如下配置
 ```
 management:
   endpoint:
@@ -57,7 +57,7 @@ management:
             <version>1.0.8-RELEASE</version>
         </dependency>
 ```
-# 最终效果：访问 http://localhost:端口号/actuator/prometheus
+# 三、最终效果：访问 http://localhost:端口号/actuator/prometheus
 ```
 # HELP tomcat_servlet_request_max_seconds  
 # TYPE tomcat_servlet_request_max_seconds gauge
@@ -85,8 +85,8 @@ tomcat_global_request_max_seconds{application="checkin",name="http-nio-8002",} 0
 # TYPE jvm_gc_pause_seconds summary
 jvm_gc_pause_seconds_count{action="end of minor GC",application="checkin",cause="Allocation Failure",} 33.0
 ```
-# prometheus配置prometheus.yml
-## 第一种方式：手动添加
+# 四、prometheus配置prometheus.yml
+## 4.1 第一种方式：手动添加
 ```
   - job_name: checkin #以application name区分
     scrape_interval: 5s
@@ -96,7 +96,7 @@ jvm_gc_pause_seconds_count{action="end of minor GC",application="checkin",cause=
         labels:
           instance: checkin #以application name区分
 ```
-## 第二种方式：eureka服务自动发现
+## 4.2 第二种方式：eureka服务自动发现
 ```
   - job_name: eureka
     scheme: http

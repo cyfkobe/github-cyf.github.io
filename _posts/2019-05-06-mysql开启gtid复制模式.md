@@ -9,7 +9,7 @@ tags:
     - Mysql
     - Docker
 ---
-## 配置
+# 一、配置
 MySQL5.6
 ```
 gtid_mode=ON(必选)    
@@ -44,7 +44,7 @@ mysql> show slave status\G
 Retrieved_Gtid_Set：从库已经接收到主库的事务编号
 Executed_Gtid_Set：已经执行的事务编号
 ```
-## gtid跳过复制错误的方法
+# 二、gtid跳过复制错误的方法
 ```
 stop slave;
 set gtid_next='2a09ee6e-645d-11e7-a96c-000c2953a1cb:1-10';
