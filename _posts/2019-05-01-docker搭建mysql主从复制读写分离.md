@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      搭建mysql主从复制读写分离
+title:      docker搭建mysql主从复制读写分离
 date:       2019-05-01
 author:     cyf
 header-img: img/beautiful.jpg
