@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      kubectl常用命令使用
-date:       2019-06-03
+title:      springboot集成es和redis冲突问题
+date:       2019-06-07
 author:     cyf
 header-img: img/beautiful.jpg
 catalog: true
