@@ -53,7 +53,7 @@ pom.yml添加sonar插件
         </plugins>
     </build>
 ```
-执行`mvn sonar:sonar`即可,看到如下信息即可
+执行`mvn clean install`,然后再执行`mvn sonar:sonar`,看到如下信息即可
 ```
 [INFO] --- sonar-maven-plugin:3.6.0.1398:sonar (default-cli) @ authentication_java ---
 [INFO] User cache: /home/cyf/.sonar/cache
@@ -70,5 +70,31 @@ pom.yml添加sonar插件
 [INFO] Load/download plugins (done) | time=141ms
 ```
 **注意**:此时会有一个问题,代码覆盖率为`0.0%`,如下图
-![sonar代码覆盖率](../img/sonarcode.png)
-
+![sonar代码覆盖率为0](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/sonarcode.png?raw=true)
+还需要添加一个单元测试覆盖率插件JaCoCo,再次执行即可
+```
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <configuration>
+                    <includes>com.*</includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+```
+![sonar代码覆盖率不为0]()
