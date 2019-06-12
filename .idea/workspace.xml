@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bd22109-9266-49ad-b75a-468d178c0a26" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/_posts/2019-06-08-docker搭建sonarqube代码审查.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2019-06-08-docker搭建sonarqube代码审查.md" afterDir="false" />
-    </list>
+    <list default="true" id="9bd22109-9266-49ad-b75a-468d178c0a26" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +63,7 @@
         <counts>
           <entry key="gitignore" value="2" />
           <entry key="html" value="23" />
-          <entry key="md" value="7284" />
+          <entry key="md" value="7318" />
           <entry key="yml" value="30" />
         </counts>
       </usages-collector>
@@ -73,7 +71,7 @@
         <counts>
           <entry key="AIDL" value="2" />
           <entry key="HTML" value="23" />
-          <entry key="Markdown" value="7282" />
+          <entry key="Markdown" value="7316" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="YAML" value="30" />
         </counts>
@@ -96,8 +94,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2019-06-08-docker搭建sonarqube代码审查.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="57">
-                <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+              <first_editor relative-caret-position="463">
+                <caret line="100" column="16" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
               </first_editor>
               <second_editor />
             </state>
@@ -347,16 +345,15 @@
       <workItem from="1560050457824" duration="4213000" />
       <workItem from="1560062903028" duration="301000" />
       <workItem from="1560333808565" duration="3304000" />
-      <workItem from="1560337770646" duration="1306000" />
+      <workItem from="1560337770646" duration="1591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71916000" />
+    <option name="totallyTimeSpent" value="72201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1025" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18566078" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -701,8 +698,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2019-06-08-docker搭建sonarqube代码审查.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="57">
-            <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+          <first_editor relative-caret-position="463">
+            <caret line="100" column="16" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
           </first_editor>
           <second_editor />
         </state>

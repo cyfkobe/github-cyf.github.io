@@ -40,7 +40,7 @@ mysql> create database sonar default character set utf8 collate utf8_general_ci;
 ```
 docker run -d -p 9000:9000 --name sonarqube --link mysql:mysql -e SONARQUBE_JDBC_URL="jdbc:mysql://mysql:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance&useSSL=false" sonarqube:zh_CN
 ```
-# 如何使用sonar
+# 二、如何使用sonar
 ## 1. maven集成sonar
 pom.yml添加sonar插件
 ```
