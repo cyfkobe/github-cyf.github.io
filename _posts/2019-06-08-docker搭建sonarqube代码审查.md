@@ -98,4 +98,4 @@ pom.yml添加sonar插件
     </build>
 ```
 ![sonar代码覆盖率不为0](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/havesonarcode.png?raw=true)
-## 2. sonar集成npm
+## 2. npm集成sonar
