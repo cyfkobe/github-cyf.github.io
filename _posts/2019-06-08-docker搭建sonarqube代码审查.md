@@ -25,5 +25,5 @@ ADD sonar-l10n-zh-plugin-1.27.jar /opt/sonarqube/extensions/plugins/
 docker build -t sonarqube:zh_CN .
 docker run -d -p 9000:9000 --name sonar --link postgresql:postgresql -e SONARQUBE_JDBC_URL=jdbc:postgresql://postgresql:5432/sonar sonarqube:zh_CN
 ```
-默认账号密码:admin/admin,登录界面如下
-![登录界面](../img/sonarlogin.png)
+默认账号密码:admin/admin,打开`http://localhost:9000`登录即可,登录界面如下
+![登录界面](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/sonarlogin.png?raw=true)
