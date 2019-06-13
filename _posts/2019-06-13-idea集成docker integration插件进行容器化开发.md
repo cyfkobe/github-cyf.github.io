@@ -18,4 +18,5 @@ tags:
 ![底部标签](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_label_docker.png?raw=true)
 # 二、使用docker integration插件
 ## 1. 设置镜像仓库地址
-打开idea`File-->Settings-->Duild,Execution,Deployment-->Docker-->Registry`，如下图所示
+打开idea`File-->Settings-->Duild,Execution,Deployment-->Docker-->Registry`，填写好自己的镜像仓库地址，如下图所示
+![设置镜像仓库地址](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_registry.png?raw=true)
