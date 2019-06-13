@@ -20,3 +20,20 @@ tags:
 ## 1. 设置镜像仓库地址
 打开idea`File-->Settings-->Duild,Execution,Deployment-->Docker-->Registry`，填写好自己的镜像仓库地址，如下图所示
 ![设置镜像仓库地址](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_registry.png?raw=true)
+## 2. 设置docker daemon
+点击底部Docker按钮,左侧会有如下几个按钮
+![点击docker按钮](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_button.png?raw=true)
+点击`Edit Configuration`,一共有三种方式，如下图所示
+![设置docker daemon](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_daemon.png?raw=true)
+使用`TCP socket`需要开启指定宿主机的`Engine API`，修改`docker.service`，添加`-H tcp://0.0.0.0:2375`，重启docker即可（我的是Ubuntu系统）
+```
+cyf@KobeBryant:~$ cat /etc/systemd/system/multi-user.target.wants/docker.service
+。。。
+ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2375  -H unix:///var/run/docker.sock --containerd=/run/containerd/containerd.sock
+。。。
+cyf@KobeBryant:~$ sudo systemctl daemon-reload
+cyf@KobeBryant:~$ sudo systemctl restart docker
+```
+## 3. 设置部署规则
+点击`Deploy`按钮，会有如下图所示的三种部署方式
+![点击部署按钮](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_deploy3.png?raw=true)
