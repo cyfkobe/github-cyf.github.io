@@ -51,11 +51,7 @@ cyf@KobeBryant:~$ sudo systemctl restart docker
 
 ![点击部署按钮](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_deploy3.png?raw=true)
 
-选择`Create Dockerfile Deployment...`一次设置好即可，如下图所示
-
-![选择dockerfile构建](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_deploy.png?raw=true)
-
-设置好需要的指定参数，设置示例如下
+选择`Create Dockerfile Deployment...`各个参数按需设置好即可，设置示例如下
 
 ![选择dockerfile构建示例](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_deploy_dockerfile.png?raw=true)
 
