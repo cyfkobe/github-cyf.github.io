@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bd22109-9266-49ad-b75a-468d178c0a26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2019-06-13-docker搭建基于HA模式的canal高可用.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/2019-06-13-idea集成zookeeper可视化插件.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2019-06-13-docker搭建基于HA模式的canal高可用.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2019-06-13-docker搭建基于HA模式的canal高可用.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2019-06-13-idea集成zookeeper可视化插件.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2019-06-13-idea集成zookeeper可视化插件.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +67,7 @@
         <counts>
           <entry key="gitignore" value="2" />
           <entry key="html" value="23" />
-          <entry key="md" value="8313" />
+          <entry key="md" value="8469" />
           <entry key="yml" value="30" />
         </counts>
       </usages-collector>
@@ -76,7 +75,7 @@
         <counts>
           <entry key="AIDL" value="2" />
           <entry key="HTML" value="23" />
-          <entry key="Markdown" value="8311" />
+          <entry key="Markdown" value="8467" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="YAML" value="30" />
         </counts>
@@ -89,8 +88,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2019-06-13-idea集成docker integration插件进行容器化开发.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1060">
-                <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+              <first_editor relative-caret-position="280">
+                <caret line="14" selection-start-line="14" selection-end-line="15" />
               </first_editor>
               <second_editor />
             </state>
@@ -109,24 +108,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2019-06-13-idea集成zookeeper可视化插件.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="180">
-                <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+              <first_editor relative-caret-position="400">
+                <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2019-06-13-docker搭建基于HA模式的canal高可用.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="40">
-                <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <first_editor relative-caret-position="-2780">
+                <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -221,8 +220,8 @@
         <option value="$PROJECT_DIR$/_posts/2019-06-08-docker搭建sonarqube代码审查.md" />
         <option value="$PROJECT_DIR$/_posts/2019-06-13-idea集成docker插件.md" />
         <option value="$PROJECT_DIR$/_posts/2019-06-13-idea集成docker integration插件进行容器化开发.md" />
-        <option value="$PROJECT_DIR$/_posts/2019-06-13-idea集成zookeeper可视化插件.md" />
         <option value="$PROJECT_DIR$/_posts/2019-06-13-docker搭建基于HA模式的canal高可用.md" />
+        <option value="$PROJECT_DIR$/_posts/2019-06-13-idea集成zookeeper可视化插件.md" />
       </list>
     </option>
   </component>
@@ -300,7 +299,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="org.mvnsearch.intellij.plugin.zookeeper.ui.ZkProjectConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -360,17 +359,18 @@
       <workItem from="1560387532621" duration="59000" />
       <workItem from="1560387612774" duration="319000" />
       <workItem from="1560387954488" duration="112000" />
-      <workItem from="1560388086781" duration="5791000" />
+      <workItem from="1560388086781" duration="6523000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80079000" />
+    <option name="totallyTimeSpent" value="80811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1025" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="ZooKeeper" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23167469" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
@@ -410,6 +410,13 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="ZooKeeperConfig">
+    <option name="host" value="39.106.17.245" />
+    <option name="port" value="2181" />
+    <option name="charset" value="UTF-8" />
+    <option name="whitePaths" value="" />
+    <option name="enabled" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/feed.xml">
@@ -714,16 +721,6 @@
     <entry file="file://$PROJECT_DIR$/img/idea_docker_deploy_dockerfile.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2019-06-13-idea集成docker integration插件进行容器化开发.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1060">
-            <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2019-06-12-docker搭建sonarqube代码审查.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -734,21 +731,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2019-06-13-idea集成zookeeper可视化插件.md">
+    <entry file="file://$PROJECT_DIR$/_posts/2019-06-13-docker搭建基于HA模式的canal高可用.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="180">
-            <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <first_editor relative-caret-position="-2780">
+            <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2019-06-13-docker搭建基于HA模式的canal高可用.md">
+    <entry file="file://$PROJECT_DIR$/_posts/2019-06-13-idea集成docker integration插件进行容器化开发.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="40">
-            <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <first_editor relative-caret-position="280">
+            <caret line="14" selection-start-line="14" selection-end-line="15" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2019-06-13-idea集成zookeeper可视化插件.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="400">
+            <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
           </first_editor>
           <second_editor />
         </state>

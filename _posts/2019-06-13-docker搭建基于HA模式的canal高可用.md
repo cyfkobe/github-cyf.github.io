@@ -31,7 +31,6 @@ docker run -d -p 2181:2181 -p 2888:2888 -p 3888:3888 --name zk3 -v /qj/zookeeper
 ```
 docker run -d -p 2181:2181 -p 2888:2888 -p 3888:3888 --name zk1 -v /qj/zookeeper/conf/:/conf -v /qj/zookeeper/data:/data --net host zookeeper
 ```
-
 **test3**
 ```
 docker run -d -p 2181:2181 -p 2888:2888 -p 3888:3888 --name zk2 -v /qj/zookeeper/conf/:/conf -v /qj/zookeeper/data:/data --net host zookeeper
