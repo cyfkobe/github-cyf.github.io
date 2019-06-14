@@ -7,7 +7,6 @@ header-img: img/beautiful.jpg
 catalog: true
 tags:
     - Mysql
-    - Docker
 ---
 # 一、配置
 MySQL5.6
