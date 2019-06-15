@@ -60,3 +60,39 @@ cyf@KobeBryant:~$ sudo systemctl restart docker
 ![构架结果](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_deploy_result.png?raw=true)
 
 同时可以对宿主机容器、镜像进行一系列操作，其它构建方式类似，不再做具体说明
+
+# 三、idea开发流程
+## 1. 连接docker主机API
+打开`File-->Settings-->Duild,Execution,Deployment-->Docker`点击加号，添加docker主机连接API（配置好不同环境），如下图所示
+![API添加](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_api.png?raw=true)
+**注意**：需要docker主机开启API
+
+## 2. 设置启动方式
+打开`Run-->Edit Configurations`点击加号，如下图所示
+![run设置](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_run.png?raw=true)
+设置启动方式名称，不同环境对应不同的docker主机，并且设置好容器的`-d、-p、-v、-e`等等参数（具体按实际需求来），如下图所示
+![run设置dev](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_run_dev.png?raw=true)
+然后就会有如下启动方式
+![启动类型](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_run_type.png?raw=true)
+
+## 3. 添加Dockerfile文件
+文件示例
+```
+FROM frolvlad/alpine-oraclejdk8:slim
+VOLUME /tmp
+ADD target/*.jar app.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+```
+## 4. 本地打包（配合Dockerfile）
+```
+mvn package -Dmaven.test.skip=true //是否跳过单元测试
+```
+## 5. 部署项目
+点击刚才设置的启动方式或点击`Deploy`按钮，如下图所示即开始部署
+![部署1](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_run_deploy1.png?raw=true)
+
+![部署2](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_run_deploy2.png?raw=true)
+
+
+
+
