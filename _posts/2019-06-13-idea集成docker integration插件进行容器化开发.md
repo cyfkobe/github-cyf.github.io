@@ -92,7 +92,3 @@ mvn package -Dmaven.test.skip=true //是否跳过单元测试
 ![部署1](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_run_deploy1.png?raw=true)
 
 ![部署2](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_docker_run_deploy2.png?raw=true)
-
-
-
-

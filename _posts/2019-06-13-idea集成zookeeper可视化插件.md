@@ -14,9 +14,11 @@ tags:
 
 ![搜索zookeeper插件](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_zookeeper_install.png?raw=true)
 
-点击`File-->Other Settings`,添加zookeeper的ip地址和端口号即可
+点击`File-->Other Settings`,添加zookeeper的ip地址和端口号，注意`要启用zookeeper插件`
 
 ![连接zookeeper](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_zookeeper_link.png?raw=true)
+
+![启用zookeeper](https://github.com/github-cyf/github-cyf.github.io/blob/master/img/idea_zookeeper_enable.png?raw=true)
 
 # 二、使用zookeeper插件
 打开左上角zookeeper图标，如下图所示，可进行一系列操作，不再具体演示
