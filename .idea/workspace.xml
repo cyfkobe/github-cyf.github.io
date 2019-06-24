@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bd22109-9266-49ad-b75a-468d178c0a26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2019-06-21-微服务-eureka.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/2019-06-21-搭建ntp时间同步服务器.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9bd22109-9266-49ad-b75a-468d178c0a26" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +12,7 @@
     <session id="1975705062">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="46" />
+          <entry key="project.closed" value="47" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="10" />
@@ -73,15 +69,15 @@
         <counts>
           <entry key="gitignore" value="2" />
           <entry key="html" value="23" />
-          <entry key="md" value="9354" />
+          <entry key="md" value="9420" />
           <entry key="yml" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="AIDL" value="2" />
+          <entry key="AIDL" value="3" />
           <entry key="HTML" value="23" />
-          <entry key="Markdown" value="9352" />
+          <entry key="Markdown" value="9417" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="YAML" value="30" />
         </counts>
@@ -106,8 +102,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2019-06-21-微服务-eureka.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="563">
-                <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+              <first_editor relative-caret-position="503">
+                <caret line="173" column="3" lean-forward="true" selection-start-line="162" selection-end-line="173" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -191,9 +187,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="25" />
+    <option name="x" value="1920" />
+    <option name="y" value="-2" />
     <option name="width" value="1920" />
-    <option name="height" value="1055" />
+    <option name="height" value="1025" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -326,17 +323,18 @@
       <workItem from="1561080328485" duration="380000" />
       <workItem from="1561099308272" duration="1188000" />
       <workItem from="1561174881252" duration="19000" />
-      <workItem from="1561283386412" duration="305000" />
+      <workItem from="1561283386412" duration="1023000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93653000" />
+    <option name="totallyTimeSpent" value="94371000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <frame x="0" y="25" width="1920" height="1055" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23130342" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23130342" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -351,7 +349,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.254329" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.254329" />
       <window_info anchor="bottom" id="Docker" order="8" weight="0.32997763" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" />
@@ -734,8 +732,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2019-06-21-微服务-eureka.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="563">
-            <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+          <first_editor relative-caret-position="503">
+            <caret line="173" column="3" lean-forward="true" selection-start-line="162" selection-end-line="173" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
