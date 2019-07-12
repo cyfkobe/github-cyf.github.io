@@ -54,6 +54,7 @@ pom.yml添加sonar插件
     </build>
 ```
 执行`mvn clean install`,然后再执行`mvn sonar:sonar`,看到如下信息即可
+`sonar:sonar -Dsonar.host.url=[sonar 服务地址] -Dsonar.login=[sonar 账户API token]`
 ```
 [INFO] --- sonar-maven-plugin:3.6.0.1398:sonar (default-cli) @ authentication_java ---
 [INFO] User cache: /home/cyf/.sonar/cache
