@@ -12,7 +12,7 @@ tags:
 ## 1.1 启动mongo
 
 ```
-docker run -d -p 27017:27017 -v /qj/mongo/data/:/data --name mongo --restart=always mongo
+docker run -d -p 27017:27017 -v /qj/mongo/data/:/data/db --name mongo --restart=always mongo
 ```
 进入容器：
 ```
