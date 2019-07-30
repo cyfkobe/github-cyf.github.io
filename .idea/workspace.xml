@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bd22109-9266-49ad-b75a-468d178c0a26" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2019-06-02-kubeadm初始化k8s集群.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2019-06-02-kubeadm初始化k8s集群.md" afterDir="false" />
-    </list>
+    <list default="true" id="9bd22109-9266-49ad-b75a-468d178c0a26" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +12,7 @@
     <session id="1975705062">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="63" />
+          <entry key="project.closed" value="64" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="12" />
@@ -76,7 +73,7 @@
         <counts>
           <entry key="gitignore" value="2" />
           <entry key="html" value="23" />
-          <entry key="md" value="9762" />
+          <entry key="md" value="9770" />
           <entry key="yml" value="30" />
         </counts>
       </usages-collector>
@@ -84,7 +81,7 @@
         <counts>
           <entry key="AIDL" value="3" />
           <entry key="HTML" value="23" />
-          <entry key="Markdown" value="9759" />
+          <entry key="Markdown" value="9767" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="YAML" value="30" />
         </counts>
@@ -121,8 +118,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2019-06-02-kubeadm初始化k8s集群.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="276">
-                <caret line="313" column="31" selection-start-line="313" selection-start-column="31" selection-end-line="313" selection-end-column="31" />
+              <first_editor relative-caret-position="40">
+                <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="27" />
               </first_editor>
               <second_editor />
             </state>
@@ -331,7 +328,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564402493974" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564402846331" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -435,16 +432,15 @@
       <workItem from="1564189728762" duration="622000" />
       <workItem from="1564220782026" duration="1233000" />
       <workItem from="1564393227287" duration="1634000" />
-      <workItem from="1564399800457" duration="2479000" />
+      <workItem from="1564399800457" duration="3476000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111633000" />
+    <option name="totallyTimeSpent" value="112630000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1025" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23130342" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -853,8 +849,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2019-06-02-kubeadm初始化k8s集群.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="276">
-            <caret line="313" column="31" selection-start-line="313" selection-start-column="31" selection-end-line="313" selection-end-column="31" />
+          <first_editor relative-caret-position="40">
+            <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="27" />
           </first_editor>
           <second_editor />
         </state>
